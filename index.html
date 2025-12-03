@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Professional Resume Builder</title>
+  <title>Resume Builder</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,11 +11,12 @@
 <header class="top-header">
   <h1>Resume Builder</h1>
   <p>Structured • Professional • PDF Ready</p>
+  <button class="dark-btn" onclick="toggleDark()">🌙 Dark Mode</button>
 </header>
 
 <div class="container">
 
-  <!-- ================= INPUT FORM ================= -->
+  <!-- ===== FORM ===== -->
   <div class="form-card">
 
     <h3>Personal Details</h3>
@@ -29,17 +30,28 @@
     <textarea id="summary" onkeyup="updateResume()"></textarea>
 
     <h3>Education</h3>
-    <input id="edu_inst" placeholder="Institute Name" onkeyup="updateResume()">
-    <input id="edu_years" placeholder="Start Year - End Year" onkeyup="updateResume()">
-    <input id="edu_course" placeholder="Course / Degree" onkeyup="updateResume()">
-    <input id="edu_percent" placeholder="Percentage / CGPA" onkeyup="updateResume()">
+    <div id="education-list">
+      <div class="edu-box">
+        <input placeholder="Institute Name" class="edu-inst">
+        <input placeholder="Start Year" class="edu-start">
+        <input placeholder="End Year" class="edu-end">
+        <input placeholder="Course / Degree" class="edu-course">
+        <input placeholder="Percentage / CGPA" class="edu-percent">
+      </div>
+    </div>
+    <button type="button" onclick="addEducation()">➕ Add Education</button>
 
     <h3>Skills</h3>
     <textarea id="skills" onkeyup="updateResume()"></textarea>
 
     <h3>Projects</h3>
-    <input id="proj_title" placeholder="Project Title" onkeyup="updateResume()">
-    <textarea id="proj_desc" onkeyup="updateResume()"></textarea>
+    <div id="project-list">
+      <div class="project-box">
+        <input placeholder="Project Title" class="proj-title">
+        <textarea placeholder="Project Description" class="proj-desc"></textarea>
+      </div>
+    </div>
+    <button type="button" onclick="addProject()">➕ Add Project</button>
 
     <h3>Internship</h3>
     <input id="intern_org" placeholder="Organization" onkeyup="updateResume()">
@@ -50,12 +62,13 @@
     <textarea id="certs" onkeyup="updateResume()"></textarea>
 
     <h3>Hobbies</h3>
-    <input id="hobbies" placeholder="Hobbies" onkeyup="updateResume()">
+    <input id="hobbies" onkeyup="updateResume()">
 
     <button type="button" onclick="downloadResume()">⬇ Download Resume (PDF)</button>
+
   </div>
 
-  <!-- ================= RESUME PREVIEW ================= -->
+  <!-- ===== RESUME ===== -->
   <div class="resume-card" id="resume">
 
     <div class="resume-header">
@@ -63,46 +76,19 @@
       <p id="v_personal"></p>
     </div>
 
-    <section>
-      <h4>Summary</h4>
-      <p id="v_summary"></p>
-    </section>
-
-    <section>
-      <h4>Education</h4>
-      <p id="v_education"></p>
-    </section>
-
-    <section>
-      <h4>Skills</h4>
-      <p id="v_skills"></p>
-    </section>
-
-    <section>
-      <h4>Projects</h4>
-      <p id="v_projects"></p>
-    </section>
-
-    <section>
-      <h4>Internship</h4>
-      <p id="v_internship"></p>
-    </section>
-
-    <section>
-      <h4>Certifications</h4>
-      <p id="v_certs"></p>
-    </section>
-
-    <section>
-      <h4>Hobbies</h4>
-      <p id="v_hobbies"></p>
-    </section>
+    <section><h4>Summary</h4><p id="v_summary"></p></section>
+    <section><h4>Education</h4><p id="v_education"></p></section>
+    <section><h4>Skills</h4><p id="v_skills"></p></section>
+    <section><h4>Projects</h4><p id="v_projects"></p></section>
+    <section><h4>Internship</h4><p id="v_internship"></p></section>
+    <section><h4>Certifications</h4><p id="v_certs"></p></section>
+    <section><h4>Hobbies</h4><p id="v_hobbies"></p></section>
 
   </div>
 </div>
 
 <footer class="footer">
-  <img src="profile.jpg">
+  <img src="profile.JPG">
   <div>
     <b>Elisetty Naveen Kumar</b><br>
     naveenellisetty23@gmail.com | 9121737359
