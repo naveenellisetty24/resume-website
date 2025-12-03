@@ -1,152 +1,136 @@
-/* ===== GLOBAL ===== */
-body {
-    font-family: Calibri, Arial, sans-serif;
-    margin: 0;
-    background: #f2f2f2;
-    color: #000;
-  }
-  
-  /* ===== LAYOUT ===== */
-  .container {
-    display: flex;
-    gap: 25px;
-    padding: 20px;
-  }
-  
-  /* ========================= */
-  /* ✅ INPUT FORM – PROFESSIONAL */
-  /* ========================= */
-  .form {
-    width: 35%;
-    background: #ffffff;
-    padding: 18px;
-    border: 1px solid #ccc;
-  }
-  
-  .form h3 {
-    margin-top: 0;
-    margin-bottom: 12px;
-    font-size: 16px;
-    border-bottom: 1px solid #aaa;
-    padding-bottom: 4px;
-  }
-  
-  /* 🔹 Modern input look */
-  .form input,
-  .form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    font-size: 13px;
-    border: 1px solid #999;
-    outline: none;
-    background: #fafafa;
-  }
-  
-  /* Focus effect */
-  .form input:focus,
-  .form textarea:focus {
-    border-color: #000;
-    background: #fff;
-  }
-  
-  /* Smaller textarea height */
-  .form textarea {
-    height: 70px;
-    resize: vertical;
-  }
-  
-  /* Button – clean */
-  button {
-    width: 100%;
-    padding: 9px;
-    font-size: 13px;
-    background: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background: #333;
-  }
-  
-  /* ========================= */
-  /* ✅ RESUME – PROFESSIONAL */
-  /* ========================= */
-  .resume {
-    width: 65%;
-    background: #fff;
-    padding: 30px;
-    border: 1px solid #ccc;
-  }
-  
-  /* Name */
-  .resume h2 {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 2px;
-    letter-spacing: 1px;
-  }
-  
-  /* Small info lines */
-  .resume p {
-    font-size: 13px;
-    margin: 4px 0;
-    white-space: pre-line;   /* keeps your formatting */
-  }
-  
-  /* Section headers */
-  .resume h4 {
-    font-size: 15px;
-    margin-top: 18px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 2px;
-    text-transform: uppercase;
-  }
-  
-  /* ========================= */
-  /* ✅ FOOTER – SMALL (YOUR INFO) */
-  /* ========================= */
-  .footer {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 8px;
-    font-size: 11px;
-    border-top: 1px solid #ccc;
-    background: #fafafa;
-  }
-  
-  .footer img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-  }
-  
-  .footer p {
-    margin: 2px 0;
-  }
-  
-  /* ========================= */
-  /* ✅ PRINT SETTINGS */
-  /* ========================= */
- @media print {
-  body {
-    margin: 0;
-  }
-
-  .form,
-  .footer {
-    display: none;
-  }
-
-  .resume {
-    width: 100%;
-    border: none;
-  }
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  color: #fff;
+}
 
-  
+/* HEADER */
+.top-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.top-header h1 {
+  margin: 0;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FORM CARD */
+.form-card {
+  width: 35%;
+  background: #ffffff;
+  color: #000;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.form-card h3 {
+  margin-top: 0;
+  color: #5a3ea5;
+}
+
+/* INPUT STYLES */
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+/* BUTTON */
+.form-card button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.form-card button:hover {
+  transform: scale(1.03);
+}
+
+/* RESUME CARD */
+.resume-card {
+  width: 65%;
+  background: #fff;
+  color: #000;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* RESUME HEADER */
+.resume-header {
+  text-align: center;
+  border-bottom: 2px solid #764ba2;
+  margin-bottom: 15px;
+}
+
+.resume-header h2 {
+  margin: 5px 0;
+}
+
+/* SECTIONS */
+.section h4 {
+  margin-bottom: 5px;
+  color: #5a3ea5;
+  border-left: 4px solid #764ba2;
+  padding-left: 6px;
+}
+
+.section p {
+  margin-top: 0;
+  font-size: 14px;
+  white-space: pre-line;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 20px;
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.footer img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* PRINT */
+@media print {
+  body {
+    background: #fff;
+  }
+  .form-card, .footer, .top-header {
+    display: none;
+  }
+  .resume-card {
+    width: 100%;
+    box-shadow: none;
+  }
+}
