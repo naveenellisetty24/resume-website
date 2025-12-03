@@ -1,25 +1,38 @@
 function updateResume() {
-  document.getElementById("v_name").innerText =
-    document.getElementById("name").value;
+  // Name
+  const nameVal = document.getElementById("name").value;
+  document.getElementById("v_name").innerText = nameVal;
 
-  const dobVal = document.getElementById("dob").value;
+  // DOB + personal line
+  const dobInput = document.getElementById("dob").value;
   let dobText = "";
-
-  if (dobVal) {
-    const d = new Date(dobVal);
-    dobText =
-      String(d.getDate()).padStart(2,"0") + "-" +
-      String(d.getMonth()+1).padStart(2,"0") + "-" +
-      d.getFullYear();
+  if (dobInput) {
+    const d = new Date(dobInput);
+    if (!isNaN(d.getTime())) {
+      dobText =
+        String(d.getDate()).padStart(2, "0") + "-" +
+        String(d.getMonth() + 1).padStart(2, "0") + "-" +
+        d.getFullYear();
+    }
   }
 
-  document.getElementById("v_personal").innerText =
-    `${dobText} | ${location.value} | ${email.value} | ${phone.value}`;
+  const locVal = document.getElementById("location").value;
+  const emailVal = document.getElementById("email").value;
+  const phoneVal = document.getElementById("phone").value;
 
+  const parts = [];
+  if (dobText) parts.push(dobText);
+  if (locVal) parts.push(locVal);
+  if (emailVal) parts.push(emailVal);
+  if (phoneVal) parts.push(phoneVal);
+
+  document.getElementById("v_personal").innerText = parts.join(" | ");
+
+  // Summary
   document.getElementById("v_summary").innerText =
     document.getElementById("summary").value;
 
-  // Education
+  // ===== EDUCATION (multiple) =====
   let eduText = "";
   document.querySelectorAll(".edu-box").forEach(box => {
     const inst = box.querySelector(".edu-inst").value;
@@ -29,30 +42,48 @@ function updateResume() {
     const perc = box.querySelector(".edu-percent").value;
 
     if (inst) {
-      eduText += `${inst} | ${start} – ${end}\n`;
-      eduText += `${course}\nPercentage: ${perc}\n\n`;
+      eduText += `${inst}`;
+      if (start || end) eduText += ` | ${start} – ${end}`;
+      eduText += "\n";
+      if (course) eduText += `${course}\n`;
+      if (perc) eduText += `Percentage: ${perc}\n`;
+      eduText += "\n";
     }
   });
   document.getElementById("v_education").innerText = eduText.trim();
 
-  // Projects
+  // ===== PROJECTS (multiple) =====
   let projText = "";
   document.querySelectorAll(".project-box").forEach(box => {
     const title = box.querySelector(".proj-title").value;
     const desc = box.querySelector(".proj-desc").value;
-    if (title) projText += `${title}\n${desc}\n\n`;
+    if (title) {
+      projText += `${title}\n`;
+      if (desc) projText += `${desc}\n`;
+      projText += "\n";
+    }
   });
   document.getElementById("v_projects").innerText = projText.trim();
 
+  // Skills
   document.getElementById("v_skills").innerText =
     document.getElementById("skills").value;
 
-  document.getElementById("v_internship").innerText =
-    intern_org.value + "\n" + intern_role.value + "\n" + intern_desc.value;
+  // Internship
+  const org = document.getElementById("intern_org").value;
+  const role = document.getElementById("intern_role").value;
+  const desc = document.getElementById("intern_desc").value;
+  let internText = "";
+  if (org) internText += org + "\n";
+  if (role) internText += role + "\n";
+  if (desc) internText += desc;
+  document.getElementById("v_internship").innerText = internText.trim();
 
+  // Certifications
   document.getElementById("v_certs").innerText =
     document.getElementById("certs").value;
 
+  // Hobbies
   document.getElementById("v_hobbies").innerText =
     document.getElementById("hobbies").value;
 }
