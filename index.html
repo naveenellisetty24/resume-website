@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Professional Resume Builder</title>
-
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Colorful Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<header class="top-header">
+  <h1>🌟 Resume Builder</h1>
+  <p>Real-time • Professional • Download PDF</p>
+</header>
+
 <div class="container">
 
-  <!-- ================= FORM ================= -->
-  <div class="form">
-    <h3>Enter Resume Details</h3>
+  <!-- ===== INPUT FORM ===== -->
+  <div class="form-card">
+    <h3>Enter Details</h3>
 
-    <input id="rname" placeholder="Full Name" onkeyup="updateResume()" />
-    <input id="dob" placeholder="Date of Birth" onkeyup="updateResume()" />
-    <input id="location" placeholder="Location" onkeyup="updateResume()" />
+    <input id="rname" placeholder="Full Name" onkeyup="updateResume()">
+    <input id="dob" placeholder="Date of Birth" onkeyup="updateResume()">
+    <input id="location" placeholder="Location" onkeyup="updateResume()">
 
-    <textarea id="summary" placeholder="Professional Summary" onkeyup="updateResume()"></textarea>
-    <textarea id="education" placeholder="Education Details" onkeyup="updateResume()"></textarea>
+    <textarea id="summary" placeholder="Summary" onkeyup="updateResume()"></textarea>
+    <textarea id="education" placeholder="Education" onkeyup="updateResume()"></textarea>
     <textarea id="experience" placeholder="Experience (if any)" onkeyup="updateResume()"></textarea>
     <textarea id="skills" placeholder="Skills" onkeyup="updateResume()"></textarea>
     <textarea id="projects" placeholder="Projects" onkeyup="updateResume()"></textarea>
@@ -29,54 +32,70 @@
     <textarea id="hobbies" placeholder="Hobbies" onkeyup="updateResume()"></textarea>
     <textarea id="contact" placeholder="Contact Details" onkeyup="updateResume()"></textarea>
 
-    <button type="button" onclick="downloadResume()">Download Resume (PDF)</button>
+    <button type="button" onclick="downloadResume()">⬇ Download Resume (PDF)</button>
   </div>
 
-  <!-- ================= RESUME ================= -->
-  <div class="resume" id="resume">
+  <!-- ===== RESUME PREVIEW ===== -->
+  <div class="resume-card" id="resume">
 
-    <h2 id="v_name"></h2>
-    <p><strong>DOB:</strong> <span id="v_dob"></span></p>
-    <p><strong>Location:</strong> <span id="v_location"></span></p>
+    <div class="resume-header">
+      <h2 id="v_name"></h2>
+      <p><span id="v_dob"></span> | <span id="v_location"></span></p>
+    </div>
 
-    <h4>Summary</h4>
-    <p id="v_summary"></p>
+    <div class="section">
+      <h4>Summary</h4>
+      <p id="v_summary"></p>
+    </div>
 
-    <h4>Education</h4>
-    <p id="v_education"></p>
+    <div class="section">
+      <h4>Education</h4>
+      <p id="v_education"></p>
+    </div>
 
-    <h4>Experience</h4>
-    <p id="v_experience"></p>
+    <div class="section">
+      <h4>Experience</h4>
+      <p id="v_experience"></p>
+    </div>
 
-    <h4>Skills</h4>
-    <p id="v_skills"></p>
+    <div class="section">
+      <h4>Skills</h4>
+      <p id="v_skills"></p>
+    </div>
 
-    <h4>Projects</h4>
-    <p id="v_projects"></p>
+    <div class="section">
+      <h4>Projects</h4>
+      <p id="v_projects"></p>
+    </div>
 
-    <h4>Internships</h4>
-    <p id="v_internships"></p>
+    <div class="section">
+      <h4>Internships</h4>
+      <p id="v_internships"></p>
+    </div>
 
-    <h4>Hobbies</h4>
-    <p id="v_hobbies"></p>
+    <div class="section">
+      <h4>Hobbies</h4>
+      <p id="v_hobbies"></p>
+    </div>
 
-    <h4>Contact</h4>
-    <p id="v_contact"></p>
+    <div class="section">
+      <h4>Contact</h4>
+      <p id="v_contact"></p>
+    </div>
+
   </div>
-
 </div>
 
-<!-- ================= FOOTER (SMALL) ================= -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
-  <img src="profile.jpg" alt="Profile Photo" />
+  <img src="profile.jpg">
   <div>
-    <p><strong>Elisetty Naveen Kumar</strong></p>
-    <p>📧 naveenellisetty23@gmail.com | 📞 9121737359</p>
+    <b>Elisetty Naveen Kumar</b><br>
+    📧 naveenellisetty23@gmail.com<br>
+    📞 9121737359
   </div>
 </footer>
 
-<!-- ✅ LINK JS (VERY IMPORTANT – MUST BE LAST) -->
 <script src="app.js"></script>
-
 </body>
 </html>
