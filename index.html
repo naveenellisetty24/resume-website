@@ -2,102 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Colorful Resume Builder</title>
+  <title>Professional Resume Builder</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="top-header">
-  <h1>🌟 Resume Builder</h1>
-  <p>Real-time • Professional • Download PDF</p>
+  <h1>Resume Builder</h1>
+  <p>Structured • Professional • PDF Ready</p>
 </header>
 
 <div class="container">
 
-  <!-- ===== INPUT FORM ===== -->
+  <!-- ================= INPUT FORM ================= -->
   <div class="form-card">
-    <h3>Enter Details</h3>
 
-    <input id="rname" placeholder="Full Name" onkeyup="updateResume()">
-    <input id="dob" placeholder="Date of Birth" onkeyup="updateResume()">
-    <input id="location" placeholder="Location" onkeyup="updateResume()">
+    <h3>Personal Details</h3>
+    <input id="name" placeholder="Full Name" onkeyup="updateResume()">
+    <input id="dob" type="date" onchange="updateResume()">
+    <input id="location" placeholder="City, State" onkeyup="updateResume()">
+    <input id="email" placeholder="Email" onkeyup="updateResume()">
+    <input id="phone" placeholder="Phone Number" onkeyup="updateResume()">
 
-    <textarea id="summary" placeholder="Summary" onkeyup="updateResume()"></textarea>
-    <textarea id="education" placeholder="Education" onkeyup="updateResume()"></textarea>
-    <textarea id="experience" placeholder="Experience (if any)" onkeyup="updateResume()"></textarea>
-    <textarea id="skills" placeholder="Skills" onkeyup="updateResume()"></textarea>
-    <textarea id="projects" placeholder="Projects" onkeyup="updateResume()"></textarea>
-    <textarea id="internships" placeholder="Internships (if any)" onkeyup="updateResume()"></textarea>
-    <textarea id="hobbies" placeholder="Hobbies" onkeyup="updateResume()"></textarea>
-    <textarea id="contact" placeholder="Contact Details" onkeyup="updateResume()"></textarea>
+    <h3>Professional Summary</h3>
+    <textarea id="summary" onkeyup="updateResume()"></textarea>
+
+    <h3>Education</h3>
+    <input id="edu_inst" placeholder="Institute Name" onkeyup="updateResume()">
+    <input id="edu_years" placeholder="Start Year - End Year" onkeyup="updateResume()">
+    <input id="edu_course" placeholder="Course / Degree" onkeyup="updateResume()">
+    <input id="edu_percent" placeholder="Percentage / CGPA" onkeyup="updateResume()">
+
+    <h3>Skills</h3>
+    <textarea id="skills" onkeyup="updateResume()"></textarea>
+
+    <h3>Projects</h3>
+    <input id="proj_title" placeholder="Project Title" onkeyup="updateResume()">
+    <textarea id="proj_desc" onkeyup="updateResume()"></textarea>
+
+    <h3>Internship</h3>
+    <input id="intern_org" placeholder="Organization" onkeyup="updateResume()">
+    <input id="intern_role" placeholder="Role & Duration" onkeyup="updateResume()">
+    <textarea id="intern_desc" onkeyup="updateResume()"></textarea>
+
+    <h3>Certifications</h3>
+    <textarea id="certs" onkeyup="updateResume()"></textarea>
+
+    <h3>Hobbies</h3>
+    <input id="hobbies" placeholder="Hobbies" onkeyup="updateResume()">
 
     <button type="button" onclick="downloadResume()">⬇ Download Resume (PDF)</button>
   </div>
 
-  <!-- ===== RESUME PREVIEW ===== -->
+  <!-- ================= RESUME PREVIEW ================= -->
   <div class="resume-card" id="resume">
 
     <div class="resume-header">
       <h2 id="v_name"></h2>
-      <p><span id="v_dob"></span> | <span id="v_location"></span></p>
+      <p id="v_personal"></p>
     </div>
 
-    <div class="section">
+    <section>
       <h4>Summary</h4>
       <p id="v_summary"></p>
-    </div>
+    </section>
 
-    <div class="section">
+    <section>
       <h4>Education</h4>
       <p id="v_education"></p>
-    </div>
+    </section>
 
-    <div class="section">
-      <h4>Experience</h4>
-      <p id="v_experience"></p>
-    </div>
-
-    <div class="section">
+    <section>
       <h4>Skills</h4>
       <p id="v_skills"></p>
-    </div>
+    </section>
 
-    <div class="section">
+    <section>
       <h4>Projects</h4>
       <p id="v_projects"></p>
-    </div>
+    </section>
 
-    <div class="section">
-      <h4>Internships</h4>
-      <p id="v_internships"></p>
-    </div>
+    <section>
+      <h4>Internship</h4>
+      <p id="v_internship"></p>
+    </section>
 
-    <div class="section">
+    <section>
+      <h4>Certifications</h4>
+      <p id="v_certs"></p>
+    </section>
+
+    <section>
       <h4>Hobbies</h4>
       <p id="v_hobbies"></p>
-    </div>
-
-    <div class="section">
-      <h4>Contact</h4>
-      <p id="v_contact"></p>
-    </div>
+    </section>
 
   </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
-  <img src="profile.JPG">
+  <img src="profile.jpg">
   <div>
     <b>Elisetty Naveen Kumar</b><br>
-    📧 naveenellisetty23@gmail.com<br>
-    📞 9121737359
+    naveenellisetty23@gmail.com | 9121737359
   </div>
 </footer>
 
 <script src="app.js"></script>
 </body>
 </html>
-
-
