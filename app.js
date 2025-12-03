@@ -1,36 +1,27 @@
 function updateResume() {
-  document.getElementById("v_name").innerText =
-    document.getElementById("rname").value;
+  v_name.innerText = name.value;
 
-  document.getElementById("v_dob").innerText =
-    document.getElementById("dob").value;
+  if (dob.value) {
+    const d = new Date(dob.value);
+    v_personal.innerText =
+      `${String(d.getDate()).padStart(2,"0")}-${String(d.getMonth()+1).padStart(2,"0")}-${d.getFullYear()} | ${location.value} | ${email.value} | ${phone.value}`;
+  }
 
-  document.getElementById("v_location").innerText =
-    document.getElementById("location").value;
+  v_summary.innerText = summary.value;
 
-  document.getElementById("v_summary").innerText =
-    document.getElementById("summary").value;
+  v_education.innerText =
+    `${edu_inst.value} | ${edu_years.value}\n${edu_course.value}\nPercentage: ${edu_percent.value}`;
 
-  document.getElementById("v_education").innerText =
-    document.getElementById("education").value;
+  v_skills.innerText = skills.value;
 
-  document.getElementById("v_experience").innerText =
-    document.getElementById("experience").value;
+  v_projects.innerText =
+    `${proj_title.value}\n${proj_desc.value}`;
 
-  document.getElementById("v_skills").innerText =
-    document.getElementById("skills").value;
+  v_internship.innerText =
+    `${intern_org.value}\n${intern_role.value}\n${intern_desc.value}`;
 
-  document.getElementById("v_projects").innerText =
-    document.getElementById("projects").value;
-
-  document.getElementById("v_internships").innerText =
-    document.getElementById("internships").value;
-
-  document.getElementById("v_hobbies").innerText =
-    document.getElementById("hobbies").value;
-
-  document.getElementById("v_contact").innerText =
-    document.getElementById("contact").value;
+  v_certs.innerText = certs.value;
+  v_hobbies.innerText = hobbies.value;
 }
 
 function downloadResume() {
