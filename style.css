@@ -163,25 +163,46 @@ body.dark-mode section h4 {
 
 /* PRINT */
 @media print {
+
+  /* Remove browser print headers */
+  @page {
+    margin: 15mm;
+  }
+
   body {
-    background: #fff;
+    background: white;
     margin: 0;
     padding: 0;
   }
 
+  /* Hide all non-resume UI */
   .top-header,
   .form-card,
   .footer {
     display: none !important;
   }
 
+  /* Hide page title effects */
+  title {
+    display: none;
+  }
+
+  /* Clean resume page */
   .resume-card {
     width: 100%;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     border-radius: 0;
     box-shadow: none;
     font-size: 13px;
+  }
+
+  /* Header formatting */
+  .resume-header {
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    text-align: center;
   }
 
   section {
@@ -189,9 +210,18 @@ body.dark-mode section h4 {
   }
 
   section h4 {
-    border-left: none;
-    border-bottom: 1px solid #000;
-    padding-left: 0;
+    font-size: 14px;
     margin-bottom: 4px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    color: #000;
+    border-left: none;
+  }
+
+  section p {
+    margin: 0;
+    line-height: 1.45;
+    color: #000;
   }
 }
+
