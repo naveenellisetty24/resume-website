@@ -1,19 +1,38 @@
 function updateResume() {
-    v_name.innerText = rname.value;
-    v_dob.innerText = dob.value;
-    v_location.innerText = location.value;
-  
-    v_summary.innerText = summary.value;
-    v_education.innerText = education.value;
-    v_experience.innerText = experience.value;
-    v_skills.innerText = skills.value;
-    v_projects.innerText = projects.value;
-    v_internships.innerText = internships.value;
-    v_hobbies.innerText = hobbies.value;
-    v_contact.innerText = contact.value;
-  }
-  
-  function downloadResume() {
-    window.print();
-  }
-  
+  document.getElementById("v_name").innerText =
+    document.getElementById("rname").value;
+
+  document.getElementById("v_dob").innerText =
+    document.getElementById("dob").value;
+
+  document.getElementById("v_location").innerText =
+    document.getElementById("location").value;
+
+  document.getElementById("v_summary").innerText =
+    document.getElementById("summary").value;
+
+  document.getElementById("v_education").innerText =
+    document.getElementById("education").value;
+
+  document.getElementById("v_experience").innerText =
+    document.getElementById("experience").value;
+
+  document.getElementById("v_skills").innerText =
+    document.getElementById("skills").value;
+
+  document.getElementById("v_projects").innerText =
+    document.getElementById("projects").value;
+
+  document.getElementById("v_internships").innerText =
+    document.getElementById("internships").value;
+
+  document.getElementById("v_hobbies").innerText =
+    document.getElementById("hobbies").value;
+
+  document.getElementById("v_contact").innerText =
+    document.getElementById("contact").value;
+}
+
+function downloadResume() {
+  window.print();
+}
