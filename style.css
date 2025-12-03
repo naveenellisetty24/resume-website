@@ -132,20 +132,21 @@ body {
   /* ========================= */
   /* ✅ PRINT SETTINGS */
   /* ========================= */
-  @media print {
-    body {
-      background: white;
-    }
-  
-    .form,
-    .footer {
-      display: none;
-    }
-  
-    .resume {
-      width: 100%;
-      border: none;
-      padding: 0;
-    }
+ @media print {
+  body {
+    margin: 0;
   }
+
+  .form,
+  .footer {
+    display: none;
+  }
+
+  .resume {
+    width: 100%;
+    border: none;
+  }
+}
+
+
   
