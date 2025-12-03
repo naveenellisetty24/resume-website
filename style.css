@@ -1,136 +1,88 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: "Segoe UI", Arial;
   background: linear-gradient(135deg,#667eea,#764ba2);
-  color: #fff;
 }
 
-/* HEADER */
 .top-header {
   text-align: center;
+  color: white;
   padding: 20px;
 }
 
-.top-header h1 {
-  margin: 0;
-}
-
-/* LAYOUT */
 .container {
   display: flex;
   gap: 20px;
   padding: 20px;
 }
 
-/* FORM CARD */
 .form-card {
   width: 35%;
-  background: #ffffff;
-  color: #000;
+  background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .form-card h3 {
-  margin-top: 0;
   color: #5a3ea5;
+  margin-bottom: 6px;
 }
 
-/* INPUT STYLES */
 .form-card input,
 .form-card textarea {
   width: 100%;
-  padding: 8px;
   margin-bottom: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 13px;
+  padding: 8px;
 }
 
-/* BUTTON */
 .form-card button {
   width: 100%;
   padding: 10px;
-  background: linear-gradient(135deg,#667eea,#764ba2);
+  background: #764ba2;
   color: white;
   border: none;
   border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
 }
 
-.form-card button:hover {
-  transform: scale(1.03);
-}
-
-/* RESUME CARD */
 .resume-card {
   width: 65%;
   background: #fff;
-  color: #000;
-  padding: 25px;
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* RESUME HEADER */
 .resume-header {
   text-align: center;
   border-bottom: 2px solid #764ba2;
-  margin-bottom: 15px;
 }
 
-.resume-header h2 {
-  margin: 5px 0;
-}
-
-/* SECTIONS */
-.section h4 {
-  margin-bottom: 5px;
+section h4 {
+  margin-top: 18px;
   color: #5a3ea5;
   border-left: 4px solid #764ba2;
   padding-left: 6px;
 }
 
-.section p {
-  margin-top: 0;
-  font-size: 14px;
+section p {
   white-space: pre-line;
 }
 
-/* FOOTER */
 .footer {
-  margin-top: 20px;
-  background: #fff;
-  color: #000;
   display: flex;
-  align-items: center;
   gap: 10px;
-  padding: 10px;
+  padding: 8px;
+  background: #fff;
   font-size: 12px;
 }
 
 .footer img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 
-/* PRINT */
 @media print {
-  body {
-    background: #fff;
-  }
-  .form-card, .footer, .top-header {
-    display: none;
-  }
-  .resume-card {
-    width: 100%;
-    box-shadow: none;
-  }
+  body { background: #fff; }
+  .form-card, .footer, .top-header { display: none; }
+  .resume-card { width: 100%; }
 }
