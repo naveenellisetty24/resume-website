@@ -1,0 +1,53 @@
+<!-- INPUT FORM -->
+<div class="form">
+    <h3>Enter Resume Details</h3>
+  
+    <input id="rname" placeholder="Full Name" onkeyup="updateResume()">
+    <input id="dob" placeholder="Date of Birth" onkeyup="updateResume()">
+    <input id="location" placeholder="Location" onkeyup="updateResume()">
+  
+    <textarea id="summary" placeholder="Summary" onkeyup="updateResume()"></textarea>
+    <textarea id="education" placeholder="Education Details" onkeyup="updateResume()"></textarea>
+    <textarea id="experience" placeholder="Experience (if any)" onkeyup="updateResume()"></textarea>
+    <textarea id="skills" placeholder="Skills" onkeyup="updateResume()"></textarea>
+    <textarea id="projects" placeholder="Projects" onkeyup="updateResume()"></textarea>
+    <textarea id="internships" placeholder="Internships (if any)" onkeyup="updateResume()"></textarea>
+    <textarea id="hobbies" placeholder="Hobbies" onkeyup="updateResume()"></textarea>
+    <textarea id="contact" placeholder="Contact Details" onkeyup="updateResume()"></textarea>
+  
+    <button onclick="downloadResume()">Download Resume</button>
+  </div>
+  
+  <!-- RESUME PREVIEW -->
+  <div class="resume" id="resume">
+  
+    <h2 id="v_name"></h2>
+    <p><strong>DOB:</strong> <span id="v_dob"></span></p>
+    <p><strong>Location:</strong> <span id="v_location"></span></p>
+  
+    <h4>Summary</h4>
+    <p id="v_summary"></p>
+  
+    <h4>Education</h4>
+    <p id="v_education"></p>
+  
+    <h4>Experience</h4>
+    <p id="v_experience"></p>
+  
+    <h4>Skills</h4>
+    <p id="v_skills"></p>
+  
+    <h4>Projects</h4>
+    <p id="v_projects"></p>
+  
+    <h4>Internships</h4>
+    <p id="v_internships"></p>
+  
+    <h4>Hobbies</h4>
+    <p id="v_hobbies"></p>
+  
+    <h4>Contact</h4>
+    <p id="v_contact"></p>
+  
+  </div>
+  

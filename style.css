@@ -1,0 +1,151 @@
+/* ===== GLOBAL ===== */
+body {
+    font-family: Calibri, Arial, sans-serif;
+    margin: 0;
+    background: #f2f2f2;
+    color: #000;
+  }
+  
+  /* ===== LAYOUT ===== */
+  .container {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+  }
+  
+  /* ========================= */
+  /* ✅ INPUT FORM – PROFESSIONAL */
+  /* ========================= */
+  .form {
+    width: 35%;
+    background: #ffffff;
+    padding: 18px;
+    border: 1px solid #ccc;
+  }
+  
+  .form h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 16px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 4px;
+  }
+  
+  /* 🔹 Modern input look */
+  .form input,
+  .form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    border: 1px solid #999;
+    outline: none;
+    background: #fafafa;
+  }
+  
+  /* Focus effect */
+  .form input:focus,
+  .form textarea:focus {
+    border-color: #000;
+    background: #fff;
+  }
+  
+  /* Smaller textarea height */
+  .form textarea {
+    height: 70px;
+    resize: vertical;
+  }
+  
+  /* Button – clean */
+  button {
+    width: 100%;
+    padding: 9px;
+    font-size: 13px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #333;
+  }
+  
+  /* ========================= */
+  /* ✅ RESUME – PROFESSIONAL */
+  /* ========================= */
+  .resume {
+    width: 65%;
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Name */
+  .resume h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+  }
+  
+  /* Small info lines */
+  .resume p {
+    font-size: 13px;
+    margin: 4px 0;
+    white-space: pre-line;   /* keeps your formatting */
+  }
+  
+  /* Section headers */
+  .resume h4 {
+    font-size: 15px;
+    margin-top: 18px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    text-transform: uppercase;
+  }
+  
+  /* ========================= */
+  /* ✅ FOOTER – SMALL (YOUR INFO) */
+  /* ========================= */
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    font-size: 11px;
+    border-top: 1px solid #ccc;
+    background: #fafafa;
+  }
+  
+  .footer img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  
+  .footer p {
+    margin: 2px 0;
+  }
+  
+  /* ========================= */
+  /* ✅ PRINT SETTINGS */
+  /* ========================= */
+  @media print {
+    body {
+      background: white;
+    }
+  
+    .form,
+    .footer {
+      display: none;
+    }
+  
+    .resume {
+      width: 100%;
+      border: none;
+      padding: 0;
+    }
+  }
+  
