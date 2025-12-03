@@ -81,8 +81,67 @@ section p {
   border-radius: 50%;
 }
 
+/* ================= PRINT FIX ================= */
 @media print {
-  body { background: #fff; }
-  .form-card, .footer, .top-header { display: none; }
-  .resume-card { width: 100%; }
+
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide UI parts */
+  .form-card,
+  .top-header,
+  .footer {
+    display: none !important;
+  }
+
+  /* Resume full page */
+  .resume-card {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 13px;
+  }
+
+  /* Remove unwanted spacing */
+  section {
+    margin-bottom: 10px;
+  }
+
+  section h4 {
+    font-size: 14px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    color: black;
+  }
+
+  section p {
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Header formatting */
+  .resume-header {
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #000;
+  }
+
+  .resume-header h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  #v_personal {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
 }
+
