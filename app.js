@@ -1,3 +1,17 @@
+/************ 🔥 FIREBASE SETUP ************/
+const firebaseConfig = {
+  apiKey: "AIzaSyDiumnp3bl57YJJudjy-_6fRyMoWZ7UTf0",
+  authDomain: "resume-website-66e79.firebaseapp.com",
+  projectId: "resume-website-66e79",
+  storageBucket: "resume-website-66e79.appspot.com",
+  messagingSenderId: "971947507906",
+  appId: "1:971947507906:web:f942c663d4a20d962bfb5b"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+/************ 🔄 UPDATE RESUME PREVIEW ************/
 function updateResume() {
   // Name
   const nameVal = document.getElementById("name").value;
@@ -32,7 +46,7 @@ function updateResume() {
   document.getElementById("v_summary").innerText =
     document.getElementById("summary").value;
 
-  // ===== EDUCATION (multiple) =====
+  // ===== EDUCATION (MULTIPLE) =====
   let eduText = "";
   document.querySelectorAll(".edu-box").forEach(box => {
     const inst = box.querySelector(".edu-inst").value;
@@ -42,7 +56,7 @@ function updateResume() {
     const perc = box.querySelector(".edu-percent").value;
 
     if (inst) {
-      eduText += `${inst}`;
+      eduText += inst;
       if (start || end) eduText += ` | ${start} – ${end}`;
       eduText += "\n";
       if (course) eduText += `${course}\n`;
@@ -52,7 +66,7 @@ function updateResume() {
   });
   document.getElementById("v_education").innerText = eduText.trim();
 
-  // ===== PROJECTS (multiple) =====
+  // ===== PROJECTS (MULTIPLE) =====
   let projText = "";
   document.querySelectorAll(".project-box").forEach(box => {
     const title = box.querySelector(".proj-title").value;
@@ -73,10 +87,12 @@ function updateResume() {
   const org = document.getElementById("intern_org").value;
   const role = document.getElementById("intern_role").value;
   const desc = document.getElementById("intern_desc").value;
+
   let internText = "";
   if (org) internText += org + "\n";
   if (role) internText += role + "\n";
   if (desc) internText += desc;
+
   document.getElementById("v_internship").innerText = internText.trim();
 
   // Certifications
@@ -88,6 +104,7 @@ function updateResume() {
     document.getElementById("hobbies").value;
 }
 
+/************ ➕ ADD FIELDS ************/
 function addEducation() {
   const div = document.createElement("div");
   div.className = "edu-box";
@@ -111,10 +128,29 @@ function addProject() {
   document.getElementById("project-list").appendChild(div);
 }
 
+/************ 🌙 DARK MODE ************/
 function toggleDark() {
   document.body.classList.toggle("dark-mode");
 }
 
+/************ 💾 SAVE TO FIRESTORE ************/
+function saveResumeToFirestore() {
+  db.collection("resumes").add({
+    name: document.getElementById("name").value,
+    dob: document.getElementById("dob").value,
+    location: document.getElementById("location").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    summary: document.getElementById("summary").value,
+    skills: document.getElementById("skills").value,
+    createdAt: new Date()
+  })
+  .then(() => console.log("✅ Resume saved to Firestore"))
+  .catch(err => console.error("❌ Firestore error:", err));
+}
+
+/************ ⬇ DOWNLOAD PDF ************/
 function downloadResume() {
-  window.print();
+  saveResumeToFirestore();   // ✅ save user data
+  window.print();            // ✅ download PDF
 }
